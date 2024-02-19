@@ -15,9 +15,13 @@ public class Util {
     private static final String USER = "NiMv";
     private static final String PASSWORD = "0123456789";
     private static SessionFactory sessionFactory;
+    private static Connection connection;
 
     public static synchronized Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+        if (connection == null || connection.isClosed()) {
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        }
+        return connection;
     }
 
     public static synchronized SessionFactory getSessionFactory() {

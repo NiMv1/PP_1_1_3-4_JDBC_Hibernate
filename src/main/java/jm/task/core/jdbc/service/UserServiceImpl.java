@@ -7,12 +7,29 @@ import jm.task.core.jdbc.model.User;
 
 import java.util.List;
 
+import static jm.task.core.jdbc.util.Util.testConnection;
+import static jm.task.core.jdbc.util.Util.testHibernateConnection;
+
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;
 
-    public UserServiceImpl() {
-        this.userDao = new UserDaoHibernateImpl(); // Заменили UserDaoJDBCImpl на UserDaoHibernateImpl
+    public UserServiceImpl(boolean useHibernate) {
+        if (useHibernate) {
+            this.userDao = new UserDaoHibernateImpl();
+            if (!testHibernateConnection()) {
+                System.exit(0);
+            } else {
+                System.out.println("Соединение с базой данных установлено");
+            }
+        } else {
+            this.userDao = new UserDaoJDBCImpl();
+            if (!testConnection()) {
+                System.exit(0);
+            } else {
+                System.out.println("Соединение с базой данных установлено");
+            }
+        }
     }
 
     @Override

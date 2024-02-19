@@ -6,18 +6,12 @@ import jm.task.core.jdbc.service.UserServiceImpl;
 
 import java.util.List;
 
-import static jm.task.core.jdbc.util.Util.testHibernateConnection;
-
 public class Main {
     public static void main(String[] args) {
 
-        if (!testHibernateConnection()) {
-            System.exit(0);
-        } else {
-            System.out.println("Соединение с базой данных установлено");
-        }
-
-        UserService userService = new UserServiceImpl();
+        // Проверяем соединение с базой данных
+        boolean useHibernate = true;
+        UserService userService = new UserServiceImpl(useHibernate);
 
         // Удаляем таблицу, если она существует
         userService.dropUsersTable();

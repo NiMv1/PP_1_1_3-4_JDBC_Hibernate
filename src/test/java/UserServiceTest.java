@@ -7,7 +7,8 @@ import org.junit.Test;
 import java.util.List;
 
 public class UserServiceTest {
-    private final UserService userService = new UserServiceImpl();
+    boolean useHibernate = true;
+    private final UserService userService = new UserServiceImpl(useHibernate);
 
     private final String testName = "Ivan";
     private final String testLastName = "Ivanov";
