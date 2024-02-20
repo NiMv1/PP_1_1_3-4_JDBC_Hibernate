@@ -11,7 +11,7 @@
           </node>
         </introspection-scope>
       </schema-mapping>
-      <url>jdbc:mysql://localhost:3306/mydbtest?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow</url>
+      <url>jdbc:mysql://localhost:3306/mydbtest?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow?useSSL=false&amp;serverTimezone=Europe/Moscow</url>
       <remarks />
       <vm-options />
       <driver-info id="mysql8" />

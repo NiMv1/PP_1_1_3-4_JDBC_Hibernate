@@ -14,20 +14,22 @@ public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;
 
+    public static boolean useHibernate;
+
     public UserServiceImpl(boolean useHibernate) {
         if (useHibernate) {
             this.userDao = new UserDaoHibernateImpl();
             if (!testHibernateConnection()) {
                 System.exit(0);
             } else {
-                System.out.println("Соединение с базой данных установлено");
+                System.out.println("Соединение с базой данных установлено (Хибернейт)");
             }
         } else {
             this.userDao = new UserDaoJDBCImpl();
             if (!testConnection()) {
                 System.exit(0);
             } else {
-                System.out.println("Соединение с базой данных установлено");
+                System.out.println("Соединение с базой данных установлено (JDBC)");
             }
         }
     }

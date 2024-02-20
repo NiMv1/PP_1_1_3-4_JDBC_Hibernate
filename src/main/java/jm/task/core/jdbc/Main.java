@@ -9,9 +9,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        // Проверяем соединение с базой данных
-        boolean useHibernate = true;
-        UserService userService = new UserServiceImpl(useHibernate);
+        // Проверяем соединение с базой данных, устанавливаем тип соединения JDBC или Hibernate
+        UserServiceImpl.useHibernate = false;
+        UserService userService = new UserServiceImpl(UserServiceImpl.useHibernate);
 
         // Удаляем таблицу, если она существует
         userService.dropUsersTable();
